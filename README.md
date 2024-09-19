@@ -15,4 +15,4 @@ I have no pure math background, and so my approach will essentially be to learn 
 
 ![](ct.jpg)
 
-A further interest is based on possibly of simulating autopoietic systems that happen to have closure to efficient causation, by the equivalence between Cartesian Closed Categories and λ-calculus; DOI: 10.1016/j.jtbi.2008.12.012 .
+A further interest is based on possibly simulating autopoietic systems that happen to have closure to efficient causation, by the equivalence between Cartesian Closed Categories and λ-calculus; DOI: 10.1016/j.jtbi.2008.12.012 .
