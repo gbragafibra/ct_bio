@@ -2,9 +2,9 @@
 
 Want to better understand biological systems, or organisms. [Robert Rosen](https://en.wikipedia.org/wiki/Robert_Rosen_(biologist)) had a very profound understanding, and as such I intend to get through the trilogy:
 
-- Fundamentals of Measurement and Representation of Natural Systems (1978)
-- Anticipatory Systems: Philosophical, Mathematical and Methodological Foundations (1985)
-- Life Itself: A Comprehensive Inquiry into the Nature, Origin, and Fabrication of Life (1991)
+- Fundamentals of Measurement and Representation of Natural Systems (1978) (FM)
+- Anticipatory Systems: Philosophical, Mathematical and Methodological Foundations (1985) (AS)
+- Life Itself: A Comprehensive Inquiry into the Nature, Origin, and Fabrication of Life (1991) (LI)
 
 which makes some use of category theory.
 
