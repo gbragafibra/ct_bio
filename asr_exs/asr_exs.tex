@@ -1,0 +1,74 @@
+\documentclass[a4paper,12pt,twoside,leqno]{article}
+\usepackage[marginratio={5:5, 5:5}, textwidth=150mm, ]{geometry}
+
+
+\pagenumbering{gobble}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{quotes}
+\usetikzlibrary{automata, arrows.meta, positioning}
+\usepackage{tikz-cd}
+\title{}
+\author{}
+\date{}
+
+
+\begin{document}
+\maketitle
+\abstract{Exercises from "Arrows, Structures and Functors: Categorical Imperative" by Arbib and Manes.}
+\paragraph*{}
+
+\subsection*{1.1}
+\paragraph*{}
+\textbf{Exercise 1} Prove that if $f: A \rightarrow B$ is one-to-one then $f$ is a split monomorphism, i.e. that there exists $g: B \rightarrow A$ with $g \circ f = id_{A}$.\paragraph*{}
+$f$ is injective (one-to-one) if $f(a_{1}) \neq f(a_{2})\, \forall a \in A, \, a_1 \neq a_2$. For any $a \in A$ we would have
+$$
+g(f(a)) = a'
+$$
+but since $f$ is injective
+$$
+g(f(a)) = a' = a
+$$ 
+such that $g \circ f = id_{A}$.
+\paragraph*{}
+\textbf{Exercise 2} Prove that for every function $f: A \rightarrow B$ with $A$ non-empty there exists a "choice function" $g: B \rightarrow A$ such that $f \circ g \circ f = f$. In axiomatic set theory this is an acceptable form of the "axiom of choice".\paragraph*{}
+In such case, $(g \circ f)(a)$ will always give a preimage of $f$ such that
+$$
+(f \circ g \circ f)(a) = f(a)
+$$
+\paragraph*{}
+\textbf{Exercise 3} Let $A$ be any set and let $f: \emptyset \rightarrow A$ be the unique function "inclusion of the empty set". [Note: recall that a function $A \rightarrow B$ is any subset $f$ of $A \times B$ satisfying "given $a \in A$ there exists an unique pair in $f$ with first coordinate $a$.] Prove that $f$ is a monomorphism.\paragraph*{}
+First of all, it should be noted that there's only one function $f$ which maps $\emptyset \rightarrow A$, as a subset of $\emptyset \times A = \emptyset$, since the empty set $\emptyset$ has no elements to map from. In order to prove that $f$ is a monomorphism, let's assume two functions
+$$
+g, h: \emptyset \rightarrow \emptyset
+$$
+in order to verify that
+$$
+f \circ g = f \circ h \implies g = h
+$$
+We are defining $g$ and $h$ in this manner, because we can't define a function from a non-empty set to an empty set (e.g. $A \rightarrow \emptyset$, as we can't assign any elements of $\emptyset$ (there are none) to those of $A$). As such
+$$
+f \circ g = f \circ h: \emptyset \rightarrow A
+$$
+implies necessarily that $g = h$.
+\paragraph*{}
+\textbf{Exercise 4} Let $2^A$ denote the power set of all subsets of $A$. Given $f: A \rightarrow B$ define $2^f: 2^B \rightarrow 2^A$ by $2^f(S) = f^{-1}(S) = \lbrace a \in A | f(a) \in B \rbrace$. Prove that $f$ is onto iff $2^f$ is one-to-one.\paragraph*{}
+Assuming $2^f$ is injective (one-to-one), with $2^f(b_1) \neq 2^f(b_2)\,  \forall b \in 2^B\, , b_1 \neq b_2$, then $f^{-1}$ will also be injective as $2^f(S) = f_{-1}(S)$. If $f^{-1}$ is injective then this means $f$ will be surjective (onto) as every element in codomain $B$ is mapped by at least one element in the domain $A$.\\
+If $2^f$ isn't injective then $f^{-1}$ isn't injective, which means $\exists b \in B$ such that $f^{-1}(b_1) = f^{-1}(b_2)$, $b_1 \neq b_2$. This would mean $\exists a \in A$ such that $f(a) = b_1 = b_2$, which doesn't allow $f$ to be properly defined as a function, let alone as an onto one.
+\paragraph*{}
+\textbf{Exercise 5} Using the definitions of Exercise 4, prove that if $(e, m)$ is an epi-mono factorization of $f$ then $(2^m, 2^e)$ is an epi-mono factorization of $2^f$.\paragraph*{}
+If the pair $(e, m)$ is an epi-mono factorization of $f: A \rightarrow B$, we have $f = m \circ e$, $e$ being an epimorphism $e: A \rightarrow f(A)$ and $m$ being a monomorphism $m: f(A) \rightarrow B$. We can presumably prove this by assuring that the following diagram commutes
+
+$$
+\begin{tikzcd}
+A \arrow[r, "e"] & f(A) \arrow[d, "m"] \\
+2^{f(A)} \arrow[u, "2^{e}"] \arrow[ru, "\phi"] & B \arrow[l, "2^{m}"]
+\end{tikzcd}
+$$
+
+Or we can see that if $e$ is an epimorphism, then $2^e$ will be monomorphic, and likewise if $m$ is a monomorphism, then $2^m$ will be epimorphic. Thus the pair $(2^m, 2^e)$ will be an epi-mono factorization of $2^f$, such that there's an isomorphism $\phi$ which makes the corresponding diagram commute.
+
+\end{document}
