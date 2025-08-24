@@ -1,0 +1,52 @@
+\documentclass[a4paper,12pt,twoside,leqno]{article}
+\usepackage[marginratio={5:5, 5:5}, textwidth=150mm, ]{geometry}
+
+
+\pagenumbering{gobble}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{quotes}
+\usetikzlibrary{automata, arrows.meta, positioning}
+\usepackage{tikz-cd}
+\title{Notes on "Arrows, Structures and Functors: Categorical Imperative"}
+\author{}
+\date{}
+\usepackage[most]{tcolorbox}
+
+\newtcolorbox[auto counter, number within=subsection]{theorem}[2][]{%
+  colback=blue!5!white,
+  colframe=red!25!black,
+  fonttitle=\bfseries,
+  title=Proposition~\thetcbcounter,
+}
+
+
+\begin{document}
+\maketitle
+\section{Learning to think with arrows}
+\subsection{Epimorphisms and Monomorphisms}
+
+- A function $f: A \rightarrow B$, with \textbf{domain} $A$ and \textbf{codomain} $B$, is \textbf{onto} or \textbf{surjective} if every element $b$ (or $f(a)$) in the codomain $B$ is mapped by at least one element $a$ in the domain $A$. So for instance, $f: \mathbb{Z} \rightarrow \mathbb{Z}: n \mapsto n + 1$ is onto. Another example of such is the identity mapping, e.g. $id_{A}: A \rightarrow A$. An example of a function which isn't onto is for instance $f: \mathbb{Z} \rightarrow \mathbb{Z}: n \mapsto n^2$, since all negative integers in the codomain aren't mapped by any element in the domain.\\
+- Two functions are said to be the same if they have the same domain and codomain, and yield the same value given a same argument.
+
+\begin{theorem}
+
+If a map $f: A \rightarrow B$ is onto, then whenever two maps $g, h: B \rightarrow C$ satisfy $g \circ f = h \circ f$, $g$ and $h$ must be equal.
+
+\end{theorem}
+
+\begin{theorem}
+
+\textbf{DEF.} A function $f$ is an \textbf{epimorphism} if $g \circ f = h \circ f$ always implies $g = h$.
+
+\end{theorem}
+
+\begin{theorem}
+
+A function $f: A \rightarrow B$ is onto iff it is an epimorphism.
+
+\end{theorem}
+\end{document}
